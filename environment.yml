@@ -1,0 +1,32 @@
+# to install this environment:
+# micromamba create -f environment.yml -y
+name: wb_flood
+channels:
+  - conda-forge  # majority of dependencies
+  - defaults
+dependencies:
+  - python=3.11
+  - pip
+  - pip:  # delegate to pip for non-conda packages
+    - nismod-snail
+  - gdal>=3.3           # command-line tools for spatial data
+  - geopandas==0.14.1   # geospatial dataframes
+  - ipykernel           # notebook support
+  - jupyter             # notebook support
+  - matplotlib==3.7.1   # basic plotting
+  - nb_conda_kernels    # notebook support
+  - numpy               # data arrays
+  - openpyxl            # Excel file format
+  - pandas==2.0.3       # tabular data
+  - pyarrow>=13.0.0     # parquet file format, Arrow data exchange
+  - pyogrio             # vectorised geospatial file i/o
+  - pyproj>=3.3.1       # geographic projections
+  - rasterio            # raster file formats
+  - rasterstats         # raster statistics
+  - rioxarray           # xarray datasets from raster files
+  - scipy               # scientific computing library
+  - spatialpandas       # plotting large datasets
+  - tqdm==4.62.3        # progress bars
+  - wget                # file downloader
+  # pin xarray as suspect 2023.11.0 duplicates/nisnames coords when concatenating
+  - xarray==2023.10.1   # named n-dimensional arrays
